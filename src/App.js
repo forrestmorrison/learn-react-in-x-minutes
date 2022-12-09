@@ -1,22 +1,21 @@
-import './App.css';
+import './App.css'
 
-const Person = () => {
+const Person = (props) => {
   return (
     <>
-      <h1>First Name: Forrest</h1>
-      <h2>Last Name: Morrison</h2>
-      <h3>Age: 33</h3>
+      <h1>First Name: {props.firstName}</h1>
+      <h2>Last Name: {props.lastName}</h2>
+      <h3>Age: {props.age}</h3>
     </>
   )
 }
 
 const App = () => {
 
-  const name = 'Forrest';
-  const isUserLoggedIn = true;
-
   return (
     <div className="App">
+      <Person firstName='Ben' lastName='Morrison' age='29'/>
+      <Person firstName='Forrest' lastName='Morrison' age={30 + 3}/>
       <Person />
     </div>
   );
