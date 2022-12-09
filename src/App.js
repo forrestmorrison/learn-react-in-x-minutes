@@ -1,5 +1,15 @@
 import './App.css';
 
+const Person = () => {
+  return (
+    <>
+      <h1>First Name: Forrest</h1>
+      <h2>Last Name: Morrison</h2>
+      <h3>Age: 33</h3>
+    </>
+  )
+}
+
 const App = () => {
 
   const name = 'Forrest';
@@ -7,7 +17,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Hello {2 + 2}!</h1>
+      <Person />
     </div>
   );
 }
