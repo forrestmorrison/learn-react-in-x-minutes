@@ -1,40 +1,25 @@
-import React, { useState, useRef, useEffect } from "react";
-import TodoList from "./TodoList";
-import { v4 as uuidv4 } from 'uuid';
+import './App.css';
 
-const LOCAL_STORAGE_KEY = 'todoApp.todos'
-
-function App() {
-  const [todos, setTodos] = useState([])
-  const todoNameRef = useRef()
-
-  useEffect(() => {
-    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY))
-    if (storedTodos) setTodos(storedTodos)
-  }, [])
-
-  useEffect(() => {
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify)
-  }, [todos])
-
-  function handleAddTodo(e) {
-    const name = todoNameRef.current.value
-    if (name === '') return
-    setTodos(prevTodos => {
-      return [...prevTodos, { id: 1, name: name, complete: false }]
-    })
-    todoNameRef.current.value = null
-  }
-
+const Person = () => {
   return (
     <>
-      <TodoList todos={todos} />
-      <input ref={todoNameRef} type="text" />
-      <button onClick={handleAddTodo}>Add Todo</button>
-      <button>Clear Completed Todos</button>
-      <div>0 left to do</div>
+      <h1>First Name: Forrest</h1>
+      <h2>Last Name: Morrison</h2>
+      <h3>Age: 33</h3>
     </>
   )
+}
+
+const App = () => {
+
+  const name = 'Forrest';
+  const isUserLoggedIn = true;
+
+  return (
+    <div className="App">
+      <Person />
+    </div>
+  );
 }
 
 export default App;
