@@ -1,21 +1,40 @@
-import { useState, useEffect } from 'react';
-import './App.css'
+
 
 const App = () => {
+  const title = 'Blog Post'
+  const body = 'This is my blog post'
+  const comments = [
+    { id: 1, text: 'Comment one' },
+    { id: 2, text: 'Comment two' },
+    { id: 3, text: 'Comment three' },
+  ]
 
-  const [counter, setCounter] = useState(0);
+  const loading = false
+  const showComments = true
 
-  useEffect(() => {
-    setCounter(100);
-  }, []);
+  const commentBlock = (
+    <div className="comments">
+      <h3>Comments ({comments.length})</h3>
+      <ul>
+        {comments.map((comment, index) => {
+          return <li key={index}>{comment.text}</li>
+        })}
+      </ul>
+    </div>
+  )
+
+  if (loading) return <h1>Loading...</h1>
 
   return (
-    <div className="App">
-      <button onClick={() => setCounter((prevCount) => prevCount - 1)}>-</button>
-      <h1>{counter}</h1>
-      <button onClick={() => setCounter((prevCount) => prevCount + 1)}>+</button>
+    <div className="container">
+      <h1>{title.toUpperCase()}</h1>
+      <p>{body}</p>
+      
+      {showComments && commentBlock}
+
+      
     </div>
-  );
+  )
 }
 
 export default App;
