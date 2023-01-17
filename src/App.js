@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import FeedbackForm from "./components/FeedbackForm";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackStats from "./components/FeedbackStats";
+import { FeedbackProvider } from './context/FeedbackContext'; 
 import FeedbackData from "./data/FeedbackData";
 
 const App = () => {
