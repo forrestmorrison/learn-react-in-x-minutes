@@ -4,6 +4,7 @@ import { useState } from "react";
 
 import Header from "./components/Header";
 
+import AboutIconLink from './components/AboutIconLink';
 import FeedbackForm from "./components/FeedbackForm";
 import FeedbackList from "./components/FeedbackList";
 import FeedbackStats from "./components/FeedbackStats";
@@ -39,6 +40,7 @@ const App = () => {
         </Route>
 
         <Route path='/about' component={AboutPage}/>
+        <AboutIconLink />
       </div>
     </Router>
   )
