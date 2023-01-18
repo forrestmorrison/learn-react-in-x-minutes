@@ -37,8 +37,8 @@ const App = () => {
         <div className="container">
           <Route exact path='/'>
             <FeedbackForm handleAdd={addFeedback} />
-            <FeedbackStats feedback={feedback} />
-            <FeedbackList feedback={feedback} handleDelete={deleteFeedback} />
+            <FeedbackStats />
+            <FeedbackList handleDelete={deleteFeedback} />
           </Route>
           <Route path='/about' component={AboutPage}/>
           <AboutIconLink />
